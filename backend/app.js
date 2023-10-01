@@ -579,5 +579,10 @@ app.get("/api/stadium", (req, res) => {
 // weatherApi();
 
 //make app importable from another files
+
+// Business Logic : test 
+
+
+
 module.exports = app;
 
