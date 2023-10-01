@@ -1,0 +1,54 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">Login</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6" style="margin: auto;">
+        <form [formGroup]="loginForm">
+
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email">
+          </div>
+          <div
+            *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched) ">
+
+
+            <div *ngIf="loginForm.controls['email'].errors.required">Email is required</div>
+
+
+            <div *ngIf="loginForm.controls['email'].errors.email">Email Invalid</div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="pwd" placeholder="Password">
+          </div>
+
+          <div
+            *ngIf="loginForm.controls['pwd'].invalid && (loginForm.controls['pwd'].dirty || loginForm.controls['pwd'].touched) ">
+
+
+            <div *ngIf="loginForm.controls['pwd'].errors.required">Email is required</div>
+
+
+            <div *ngIf="loginForm.controls['pwd'].errors.minlength || loginForm.controls['pwd'].errors.mmaxlength">
+              password mast at least 6 chars & max 12 chars</div>
+          </div>
+
+          <div style="text-align: center;" class="form-group">
+            <input type="submit" [disabled]="loginForm.invalid" (click)="login()" class="btn btn-primary py-3 px-5"
+              value="Login">
+          </div>
+          <span style="color: red;">{{errorMsg}}</span>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

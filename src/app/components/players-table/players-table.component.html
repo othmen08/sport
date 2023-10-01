@@ -1,0 +1,30 @@
+<table  class="table custom-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Player Name</th>
+        <th>Player Number</th>
+        <th>Position</th>
+        <th>Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elt of playersTable">
+        <td>{{elt.id}}</td>
+        <td><strong class="text-white">{{elt.name}}</strong></td>
+        <td>{{elt.nbr}}</td>
+        <td>{{elt.pos}}</td>
+      
+        <td>
+          <button class="btn btn-success" (click)="goToDisplay(elt.id)">Display</button>
+          <button class="btn btn-warning" (click)="editPlayer(elt.id)">Edit</button>
+          <button class="btn btn-danger">Delete</button>
+        </td>
+       
+      </tr>
+      
+      
+   
+    </tbody>
+  </table>

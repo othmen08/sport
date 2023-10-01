@@ -1,0 +1,30 @@
+<table  class="table custom-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>ScoreOne</th>
+        <th>ScoreTwo</th>
+        <th>TeamOne</th>
+        <th>TeamTow</th>
+        <th>Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elt of matchesTable">
+        <td>{{elt._id}}</td>
+        <td><strong class="text-white">{{elt.scoreOne}}</strong></td>
+        <td>{{elt.scoreTwo}}</td>
+        <td>{{elt.teamOne}}</td>
+        <td>{{elt.teamTwo}}</td>
+        <td>
+          <button class="btn btn-success" (click)="goToDisplay(elt._id)">Display</button>
+          <button class="btn btn-warning" (click)="editMatch(elt._id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteMatch(elt._id)">Delete</button>
+        </td>
+      </tr>
+      
+      
+   
+    </tbody>
+  </table>

@@ -1,0 +1,52 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">Add Players</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align: center;" class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6" style="margin: auto;">
+        <h4>Add Players</h4>
+        <form #playerForm="ngForm" (ngSubmit)="addPlayer()">
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="player.name" name="a" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="player.position" name="b" placeholder="Position">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="player.number" name="c" placeholder="Nbr">
+          </div>
+          <div class="form-group">
+            <select id=""  class="form-control" (change)="selectTeam($event)" >
+              <option name="teamId" style="color: black;" [value]="t._id" *ngFor=" let t of teams"  >
+{{t.teamName}}
+              </option>
+            </select>
+          </div>
+          <div class="form-group" style="visibility: hidden;">
+            <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)" />
+          </div>
+          <div class="text-center">
+            <div>
+              <button class="btn btn-success" (click)="filePicker.click()">Please select your file</button>
+            </div>
+            <img [src]="imagePreview" *ngIf="imagePreview" alt="" class="m-3" width="200px">
+          </div>
+         
+
+          <div style="text-align: center;" class="form-group">
+            <input type="submit" class="btn btn-primary py-3 px-5" value="Add">
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<table  class="table custom-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Team Name</th>
+        <th>Team Owner</th>
+        <th>Stadium</th>
+        <th>Foundation</th>
+        <th>Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elt of teamsTable">
+        <td>{{elt.id}}</td>
+        <td><strong class="text-white">{{elt.name | asterix}}</strong></td>
+        <td>{{elt.owner | reverse}}</td>
+        <td>{{elt.stadium}}</td>
+        <td>{{elt.foundation}}</td>
+        <td>
+          <button class="btn btn-success" (click)="goToDisplay(elt.id)">Display</button>
+          <button class="btn btn-warning" (click)="editTeam(elt.id)">Edit</button>
+          <button class="btn btn-danger"  (click)="deleteMatch(elt.id)">Delete</button>
+        </td>
+       
+      </tr>
+      
+      
+   
+    </tbody>
+  </table>
